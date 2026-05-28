@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Velkor Automation – Partener tehnic pentru automatizare industrială și robotică medicală în Europa de Est. Soluții scalabile, implementare reală, suport dedicat.">
+<meta name="keywords" content="automatizare industrială Moldova, roboți industriali, robotică medicală, Industry 4.0, AGV, cobot, automatizare fabrici, digital twin, IoT industrial">
+<meta property="og:title" content="Velkor Automation – Automatizare Industrială & Medicală">
+<meta property="og:description" content="Partener tehnic pentru automatizare industrială și robotică medicală în Europa de Est.">
+<meta property="og:type" content="website">
+<title>Velkor Automation – Automatizare Industrială & Robotică Medicală</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   VELKOR AUTOMATION v2 — CREDIBIL & PREMIUM
+   ═══════════════════════════════════════════ */
+:root {
+  --cyan:    #00f5ff;
+  --blue:    #0080ff;
+  --green:   #00d084;
+  --dark:    #020810;
+  --dark2:   #050f1a;
+  --dark3:   #091525;
+  --surface: #0a1628;
+  --surface2:#0d1e35;
+  --text:    #e8f4ff;
+  --text2:   #8ab4d4;
+  --text3:   #4a7a9b;
+  --border:  rgba(0,245,255,0.12);
+  --border2: rgba(0,245,255,0.25);
+  --glow:    0 0 40px rgba(0,245,255,0.15);
+  --font-title: 'Orbitron', monospace;
+  --font-body:  'Syne', sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+  --max-w: 1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:var(--font-body);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+.cursor{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .3s,height .3s}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1px solid rgba(0,245,255,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease,width .3s,height .3s}
+.cursor.big{width:5px;height:5px}.cursor-ring.big{width:52px;height:52px}
+
+/* GRID BG */
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(0,245,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+
+/* LOADER */
+.loader{position:fixed;inset:0;background:var(--dark);z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .6s,visibility .6s}
+.loader.out{opacity:0;visibility:hidden}
+.ld-logo{font-family:var(--font-title);font-size:1.3rem;font-weight:700;letter-spacing:.3em;color:var(--text)}
+.ld-logo span{color:var(--cyan)}
+.ld-bar{width:180px;height:2px;background:var(--border);position:relative;overflow:hidden}
+.ld-prog{position:absolute;top:0;left:0;height:100%;background:var(--cyan);width:0;box-shadow:0 0 10px var(--cyan);transition:width .1s}
+.ld-txt{font-family:var(--font-mono);font-size:.6rem;color:var(--text3);letter-spacing:.2em;text-transform:uppercase}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 4rem;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(2,8,16,.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
+nav.scrolled{height:58px;background:rgba(2,8,16,.97)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-hex{width:34px;height:34px}
+.logo-txt{font-family:var(--font-title);font-size:1rem;font-weight:700;letter-spacing:.15em;color:var(--text)}
+.logo-txt span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--cyan);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{padding:7px 22px!important;border:1px solid var(--cyan)!important;color:var(--cyan)!important;border-radius:2px;transition:all .3s!important}
+.nav-cta:hover{background:rgba(0,245,255,.08)!important;box-shadow:0 0 18px rgba(0,245,255,.2)}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none}
+.hamburger span{width:24px;height:1px;background:var(--text);display:block;transition:all .3s}
+
+/* SECTIONS GENERAL */
+section{position:relative;z-index:2}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+.lbl{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:.9rem}
+.lbl::before{content:'';width:22px;height:1px;background:var(--cyan)}
+.sec-title{font-family:var(--font-title);font-size:clamp(1.7rem,2.8vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:.9rem}
+.sec-title .a{color:var(--cyan)}
+.sec-desc{font-size:.97rem;line-height:1.85;color:var(--text2);max-width:560px}
+
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;background:var(--cyan);color:var(--dark);font-family:var(--font-title);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;border-radius:2px;cursor:none;transition:all .3s;position:relative;overflow:hidden}
+.btn-p:hover{box-shadow:0 0 28px rgba(0,245,255,.4);transform:translateY(-2px)}
+.btn-s{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;background:transparent;color:var(--text);font-family:var(--font-title);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);border-radius:2px;cursor:none;transition:all .3s}
+.btn-s:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,245,255,.04)}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;background:#25D366;color:#fff;font-family:var(--font-title);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;cursor:none;transition:all .3s}
+.btn-wa:hover{background:#1ebe5d;box-shadow:0 0 20px rgba(37,211,102,.3);transform:translateY(-2px)}
+
+/* TICKER */
+.ticker-wrap{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:11px 0;position:relative;z-index:2}
+.ticker-track{display:flex;animation:tick 35s linear infinite;white-space:nowrap}
+.ticker-item{display:flex;align-items:center;gap:.8rem;padding:0 2rem;font-family:var(--font-mono);font-size:.7rem;color:var(--text3);letter-spacing:.05em}
+.ticker-item span{color:var(--cyan)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══ HERO ═══ */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 4rem 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.o1{width:550px;height:550px;background:radial-gradient(circle,rgba(0,128,255,.13) 0%,transparent 70%);top:-80px;right:-80px;animation:of 9s ease-in-out infinite}
+.o2{width:380px;height:380px;background:radial-gradient(circle,rgba(0,245,255,.07) 0%,transparent 70%);bottom:80px;left:8%;animation:of 11s ease-in-out infinite reverse}
+@keyframes of{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-18px) scale(1.04)}66%{transform:translate(-18px,25px) scale(.96)}}
+.hero-content{position:relative;z-index:2;max-width:var(--max-w);width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border:1px solid var(--border2);background:rgba(0,245,255,.05);border-radius:1px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.4rem}
+.bdot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,245,255,.4)}50%{box-shadow:0 0 0 6px rgba(0,245,255,0)}}
+.hero-title{font-family:var(--font-title);font-size:clamp(2rem,3.8vw,3.4rem);font-weight:900;line-height:1.1;margin-bottom:1.4rem}
+.hero-title .a{color:var(--cyan)}
+.hero-title .o{-webkit-text-stroke:1px rgba(0,245,255,.5);color:transparent}
+.hero-sub{font-size:1rem;line-height:1.75;color:var(--text2);max-width:460px;margin-bottom:2.2rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+/* DIFERENȚIERE BOX */
+.diff-box{margin-top:2.2rem;padding:1.2rem 1.5rem;border:1px solid rgba(0,245,255,.18);background:rgba(0,245,255,.04);border-radius:4px;border-left:3px solid var(--cyan)}
+.diff-box p{font-size:.88rem;line-height:1.7;color:var(--text2)}
+.diff-box strong{color:var(--cyan)}
+
+/* ROBOT FRAME */
+.robot-frame{position:relative;width:100%;aspect-ratio:1;max-width:480px;margin:0 auto}
+.robot-frame canvas{width:100%;height:100%;display:block}
+.fc{position:absolute;width:28px;height:28px;border-color:var(--cyan);border-style:solid}
+.fc.tl{top:0;left:0;border-width:2px 0 0 2px}
+.fc.tr{top:0;right:0;border-width:2px 2px 0 0}
+.fc.bl{bottom:0;left:0;border-width:0 0 2px 2px}
+.fc.br{bottom:0;right:0;border-width:0 2px 2px 0}
+.scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.4;animation:scan 4s linear infinite}
+@keyframes scan{0%{top:0}100%{top:100%}}
+.dtag{position:absolute;font-family:var(--font-mono);font-size:.62rem;color:var(--cyan);opacity:.65;white-space:nowrap}
+.dtag::before{content:'▸ ';opacity:.5}
+
+/* ═══ DESPRE ═══ */
+#about{padding:110px 4rem;background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 50%,var(--dark) 100%)}
+.about-grid{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-box{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:2.2rem;position:relative;overflow:hidden}
+.about-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+/* MISIUNE CARD */
+.mission-card{padding:1.5rem;background:var(--dark3);border:1px solid var(--border);border-radius:3px;margin-bottom:1.2rem}
+.mission-card h4{font-family:var(--font-title);font-size:.78rem;color:var(--cyan);letter-spacing:.12em;margin-bottom:.5rem;text-transform:uppercase}
+.mission-card p{font-size:.85rem;color:var(--text2);line-height:1.7}
+/* VALORI */
+.values-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+.val-item{padding:1rem;background:var(--dark3);border:1px solid var(--border);border-radius:2px;text-align:center}
+.val-icon{font-size:1.4rem;display:block;margin-bottom:.4rem}
+.val-name{font-size:.75rem;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.val-desc{font-size:.7rem;color:var(--text3)}
+.feature-list{list-style:none;margin-top:1.5rem}
+.feature-list li{padding:9px 0;border-bottom:1px solid var(--border);font-size:.87rem;color:var(--text2);display:flex;align-items:center;gap:11px}
+.feature-list li::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0}
+
+/* ═══ SERVICII ═══ */
+#services{padding:110px 4rem;background:var(--dark2)}
+.services-header{max-width:var(--max-w);margin:0 auto 3.5rem;text-align:center}
+.services-header .lbl{justify-content:center}
+.services-header .sec-desc{margin:0 auto}
+.stabs{display:flex;max-width:var(--max-w);margin:0 auto 2.5rem;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.tab-btn{flex:1;padding:13px 20px;background:transparent;border:none;border-right:1px solid var(--border);color:var(--text2);font-family:var(--font-body);font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:none;transition:all .3s}
+.tab-btn:last-child{border-right:none}
+.tab-btn.act{background:rgba(0,245,255,.07);color:var(--cyan);border-bottom:2px solid var(--cyan)}
+.tab-btn:hover:not(.act){background:rgba(255,255,255,.03);color:var(--text)}
+.sgrid{display:none;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;max-width:var(--max-w);margin:0 auto}
+.sgrid.act{display:grid}
+.scard{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1.8rem;position:relative;overflow:hidden;transition:all .4s;cursor:none}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.scard:hover::before{transform:scaleX(1)}
+.scard:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-4px);box-shadow:var(--glow)}
+.cico{width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:rgba(0,245,255,.07);border:1px solid var(--border2);border-radius:2px;margin-bottom:1.3rem}
+.cico svg{width:22px;height:22px;color:var(--cyan)}
+.ctit{font-family:var(--font-title);font-size:.9rem;font-weight:600;margin-bottom:.65rem}
+.cdesc{font-size:.83rem;line-height:1.7;color:var(--text2);margin-bottom:.9rem}
+.ctags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:.62rem;padding:3px 9px;background:rgba(0,245,255,.05);border:1px solid var(--border);border-radius:1px;color:var(--text3);font-family:var(--font-mono)}
+
+/* AVANTAJE */
+#benefits{padding:110px 4rem;background:var(--dark)}
+.ben-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.blist{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.bitem{padding:1.8rem;background:var(--surface);border:1px solid var(--border);border-radius:4px;transition:all .3s;cursor:none}
+.bitem:hover{border-color:var(--border2);box-shadow:var(--glow)}
+.bicon{font-size:1.8rem;margin-bottom:.8rem;display:block}
+.bnum{font-family:var(--font-title);font-size:2rem;font-weight:700;color:var(--cyan);line-height:1}
+.btit{font-size:.87rem;font-weight:600;margin:.4rem 0 .35rem}
+.bdesc{font-size:.78rem;color:var(--text3);line-height:1.6}
+
+/* PROCES DE LUCRU */
+#process{padding:110px 4rem;background:var(--dark2)}
+.proc-inner{max-width:var(--max-w);margin:0 auto}
+.proc-header{text-align:center;margin-bottom:4rem}
+.proc-header .lbl{justify-content:center}
+.proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.proc-grid::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--cyan),transparent);opacity:.3}
+.pstep{text-align:center;padding:0 1rem;position:relative}
+.pnum{width:72px;height:72px;border-radius:50%;background:var(--surface);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:var(--font-title);font-size:1.1rem;font-weight:700;color:var(--cyan);position:relative;z-index:1;transition:all .3s}
+.pstep:hover .pnum{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,245,255,.2)}
+.ptit{font-size:.85rem;font-weight:700;margin-bottom:.4rem;color:var(--text)}
+.pdesc{font-size:.75rem;color:var(--text3);line-height:1.6}
+
+/* INDUSTRII */
+#industries{padding:110px 4rem;background:var(--dark)}
+.ind-inner{max-width:var(--max-w);margin:0 auto}
+.ind-header{text-align:center;margin-bottom:3.5rem}
+.ind-header .lbl{justify-content:center}
+.ind-header .sec-desc{margin:0 auto}
+.ind-grid{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center}
+.icard{width:210px;padding:1.8rem 1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:4px;text-align:center;transition:all .3s;cursor:none;position:relative;overflow:hidden}
+.icard::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,245,255,.07),transparent 60%);opacity:0;transition:opacity .3s}
+.icard:hover::after{opacity:1}
+.icard:hover{border-color:var(--border2);transform:translateY(-4px)}
+.iico{font-size:2.2rem;margin-bottom:.9rem;display:block}
+.iname{font-size:.82rem;font-weight:600;margin-bottom:.4rem}
+.idesc{font-size:.72rem;color:var(--text3);line-height:1.5}
+
+/* TEHNOLOGII */
+#technologies{padding:110px 4rem;background:var(--dark2)}
+.tech-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.tlist{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.8rem}
+.titem{display:flex;align-items:center;gap:11px;padding:.9rem;background:var(--surface);border:1px solid var(--border);border-radius:2px;transition:all .3s;cursor:none}
+.titem:hover{border-color:var(--border2);background:var(--surface2)}
+.tdot{width:7px;height:7px;background:var(--cyan);border-radius:50%;flex-shrink:0;box-shadow:0 0 7px var(--cyan)}
+.tname{font-size:.8rem;font-weight:500}
+
+/* PORTOFOLIU */
+#portfolio{padding:110px 4rem;background:var(--dark)}
+.port-header{max-width:var(--max-w);margin:0 auto 3.5rem;text-align:center}
+.port-header .lbl{justify-content:center}
+.port-header .sec-desc{margin:0 auto}
+/* DISCLAIMER */
+.port-disclaimer{max-width:var(--max-w);margin:0 auto 2.5rem;padding:1rem 1.5rem;background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.15);border-radius:3px;border-left:3px solid var(--cyan);display:flex;align-items:center;gap:12px}
+.port-disclaimer svg{flex-shrink:0;color:var(--cyan)}
+.port-disclaimer p{font-size:.82rem;color:var(--text2);line-height:1.6}
+.port-disclaimer strong{color:var(--cyan)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:var(--max-w);margin:0 auto}
+.pitem{background:var(--surface);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .3s;cursor:none}
+.pitem:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow)}
+.pitem:first-child{grid-column:span 2}
+.pvis{height:190px;background:var(--dark3);overflow:hidden}
+.pvis canvas{width:100%;height:100%}
+.pinfo{padding:1.4rem}
+.pcat{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:.45rem}
+.ptitle{font-family:var(--font-title);font-size:.88rem;font-weight:600;margin-bottom:.45rem}
+.pdesc{font-size:.78rem;color:var(--text3);line-height:1.6}
+.ptag-scenario{display:inline-flex;align-items:center;gap:5px;font-size:.62rem;color:var(--text3);font-family:var(--font-mono);margin-top:.6rem;padding:2px 8px;border:1px solid var(--border);border-radius:1px}
+
+/* ECHIPA */
+#team{padding:110px 4rem;background:var(--dark2)}
+.team-inner{max-width:var(--max-w);margin:0 auto}
+.team-header{text-align:center;margin-bottom:3.5rem}
+.team-header .lbl{justify-content:center}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tmember{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:2rem;text-align:center;transition:all .3s;cursor:none}
+.tmember:hover{border-color:var(--border2);box-shadow:var(--glow)}
+.tavatar{width:80px;height:80px;border-radius:50%;background:var(--dark3);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:var(--font-title);font-size:1.2rem;font-weight:700;color:var(--cyan)}
+.tname{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.trole{font-size:.78rem;color:var(--cyan);margin-bottom:.8rem;font-family:var(--font-mono);letter-spacing:.05em}
+.tbio{font-size:.82rem;color:var(--text2);line-height:1.7;margin-bottom:1rem}
+.tli{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;color:var(--text3);text-decoration:none;transition:color .3s;cursor:none}
+.tli:hover{color:var(--cyan)}
+
+/* CONTACT */
+#contact{padding:110px 4rem;background:var(--dark)}
+.con-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start}
+.con-info{padding-top:2rem}
+.con-info .sec-desc{margin-bottom:2rem}
+/* CTA BUTTONS CONTACT */
+.con-ctas{display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem}
+.cdetail{display:flex;align-items:flex-start;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.cdetail:last-of-type{border-bottom:none}
+.cdico{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:rgba(0,245,255,.07);border:1px solid var(--border);border-radius:2px;flex-shrink:0}
+.cdico svg{width:15px;height:15px;color:var(--cyan)}
+.dlbl{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
+.dval{font-size:.88rem;margin-top:2px}
+/* HOURS */
+.hours-box{margin-top:1.5rem;padding:1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:3px}
+.hours-box h4{font-family:var(--font-title);font-size:.72rem;color:var(--cyan);letter-spacing:.12em;margin-bottom:.8rem;text-transform:uppercase}
+.hours-row{display:flex;justify-content:space-between;font-size:.8rem;padding:.3rem 0;border-bottom:1px solid var(--border);color:var(--text2)}
+.hours-row:last-child{border:none}
+.hours-row span:last-child{color:var(--text)}
+.con-form{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:2.2rem;position:relative;overflow:hidden}
+.con-form::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--blue),transparent)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem}
+.fgrp{display:flex;flex-direction:column;gap:5px;margin-bottom:.9rem}
+.fgrp:last-of-type{margin-bottom:1.3rem}
+.flbl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);font-family:var(--font-mono)}
+.finp,.ftxt{background:var(--dark3);border:1px solid var(--border);border-radius:2px;padding:11px 15px;color:var(--text);font-family:var(--font-body);font-size:.87rem;outline:none;transition:all .3s;width:100%}
+.finp:focus,.ftxt:focus{border-color:var(--cyan);background:rgba(0,245,255,.03);box-shadow:0 0 0 1px rgba(0,245,255,.12)}
+.ftxt{resize:vertical;min-height:110px}
+.finp::placeholder,.ftxt::placeholder{color:var(--text3)}
+select.finp option{background:var(--dark3);color:var(--text)}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4rem 2rem;position:relative;z-index:2}
+.fg{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:4rem}
+.ftag{font-size:.83rem;color:var(--text2);line-height:1.7;margin:1rem 0 1.5rem}
+.socials{display:flex;gap:10px}
+.soc{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--border);border-radius:2px;color:var(--text2);text-decoration:none;transition:all .3s;font-size:.9rem;cursor:none}
+.soc:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,245,255,.05)}
+.fcol h4{font-family:var(--font-title);font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.3rem}
+.flinks{list-style:none}
+.flinks li{margin-bottom:.65rem}
+.flinks a{font-size:.83rem;color:var(--text2);text-decoration:none;transition:color .3s}
+.flinks a:hover{color:var(--cyan)}
+.fbot{max-width:var(--max-w);margin:0 auto;padding-top:1.8rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.fcopy{font-size:.75rem;color:var(--text3);font-family:var(--font-mono)}
+/* CERT BADGES */
+.cert-badges{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.cbadge{font-size:.6rem;padding:3px 8px;border:1px solid rgba(0,245,255,.25);border-radius:1px;color:var(--text3);font-family:var(--font-mono);letter-spacing:.05em}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:0 2rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  #hero,#about,#services,#benefits,#process,#industries,#technologies,#portfolio,#team,#contact,footer{padding-left:2rem;padding-right:2rem}
+  .hero-content,.about-grid,.ben-inner,.tech-inner,.con-inner{grid-template-columns:1fr;gap:3rem}
+  .proc-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .proc-grid::before{display:none}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .pitem:first-child{grid-column:span 2}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .pgrid,.team-grid{grid-template-columns:1fr}
+  .pitem:first-child{grid-column:span 1}
+  .fg2,.blist,.tlist{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .fbot{flex-direction:column;gap:1rem;text-align:center}
+  .proc-grid{grid-template-columns:1fr}
+  .hero-title{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="ld-logo">VELKOR <span>AUTOMATION</span></div>
+  <div class="ld-bar"><div class="ld-prog" id="ldProg"></div></div>
+  <div class="ld-txt" id="ldTxt">Inițializare sisteme...</div>
+</div>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <svg class="logo-hex" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="17,2 32,9.5 32,24.5 17,32 2,24.5 2,9.5" fill="none" stroke="rgba(0,245,255,0.3)" stroke-width="1"/>
+      <polygon points="17,6 28,12 28,22 17,28 6,22 6,12" fill="none" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
+      <polygon points="17,10 24,14 24,22 17,26 10,22 10,14" fill="rgba(0,245,255,0.08)" stroke="#00f5ff" stroke-width="1"/>
+      <circle cx="17" cy="18" r="3.5" fill="#00f5ff" opacity="0.9"/>
+    </svg>
+    <span class="logo-txt">VELKOR <span>AUTO</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Despre</a></li>
+    <li><a href="#services">Servicii</a></li>
+    <li><a href="#process">Proces</a></li>
+    <li><a href="#industries">Industrii</a></li>
+    <li><a href="#team">Echipă</a></li>
+    <li><a href="#portfolio">Proiecte</a></li>
+    <li><a href="#contact" class="nav-cta">Contactează-ne</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge"><span class="bdot"></span>Industry 4.0 · Robotics · AI</div>
+      <h1 class="hero-title">
+        Automatizăm<br>
+        <span class="a">Inteligent</span><br>
+        <span class="o">Industria</span>
+      </h1>
+      <p class="hero-sub">Partener tehnic pentru automatizare industrială și robotică medicală în Europa de Est. Implementăm soluții scalabile, de la consultanță până la punere în funcțiune.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-p">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Solicită Consultație
+        </a>
+        <a href="https://wa.me/37376794607" class="btn-wa" target="_blank">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#services" class="btn-s">Descoperă Soluțiile →</a>
+      </div>
+      <!-- DIFERENȚIERE CLARĂ -->
+      <div class="diff-box">
+        <p><strong>Ce ne diferențiază:</strong> Suntem singurul partener din Moldova care integrează robotică industrială și soluții medicale într-un ecosistem unitar, cu suport tehnic local și implementare hands-on.</p>
+      </div>
+    </div>
+    <div>
+      <div class="robot-frame">
+        <canvas id="heroCanvas" width="480" height="480"></canvas>
+        <div class="fc tl"></div><div class="fc tr"></div>
+        <div class="fc bl"></div><div class="fc br"></div>
+        <div class="scan"></div>
+        <div class="dtag" style="top:10%;left:102%">AXIS_6DOF</div>
+        <div class="dtag" style="top:30%;left:102%">TORQUE: 180Nm</div>
+        <div class="dtag" style="top:50%;left:102%">PRECIZIE: ±0.02mm</div>
+        <div class="dtag" style="bottom:20%;right:102%;text-align:right">AI_ACTIV</div>
+        <div class="dtag" style="bottom:8%;right:102%;text-align:right">VITEZĂ: 3.2m/s</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">🤖 <span>Roboți Industriali</span> · Eficiență reală în producție</div>
+    <div class="ticker-item">⚕️ <span>Roboți Medicali</span> · Inovație în sănătate</div>
+    <div class="ticker-item">🏭 <span>Industry 4.0</span> · Transformare digitală</div>
+    <div class="ticker-item">🧠 <span>Inteligență Artificială</span> · Decizii predictive</div>
+    <div class="ticker-item">⚙️ <span>Automatizare</span> · Operare 24/7</div>
+    <div class="ticker-item">🌐 <span>IoT Industrial</span> · Conectivitate totală</div>
+    <div class="ticker-item">📍 <span>Europa de Est</span> · Partener local de încredere</div>
+    <div class="ticker-item">🤖 <span>Roboți Industriali</span> · Eficiență reală în producție</div>
+    <div class="ticker-item">⚕️ <span>Roboți Medicali</span> · Inovație în sănătate</div>
+    <div class="ticker-item">🏭 <span>Industry 4.0</span> · Transformare digitală</div>
+    <div class="ticker-item">🧠 <span>Inteligență Artificială</span> · Decizii predictive</div>
+    <div class="ticker-item">⚙️ <span>Automatizare</span> · Operare 24/7</div>
+    <div class="ticker-item">🌐 <span>IoT Industrial</span> · Conectivitate totală</div>
+    <div class="ticker-item">📍 <span>Europa de Est</span> · Partener local de încredere</div>
+  </div>
+</div>
+
+<!-- DESPRE -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-box">
+        <div class="mission-card">
+          <h4>Misiunea Noastră</h4>
+          <p>Democratizăm accesul la automatizare industrială pentru companiile din Europa de Est — oferind soluții de nivel enterprise, adaptate realității locale, cu suport tehnic de proximitate.</p>
+        </div>
+        <div class="mission-card">
+          <h4>De ce există Velkor</h4>
+          <p>Industria din Moldova și regiune are nevoie de un partener tehnic local care înțelege contextul economic, reglementările și provocările specifice — nu doar un reseller de echipamente importate.</p>
+        </div>
+        <div class="values-row">
+          <div class="val-item">
+            <span class="val-icon">🔧</span>
+            <div class="val-name">Inginerie reală</div>
+            <div class="val-desc">Nu vindem concepte. Implementăm soluții.</div>
+          </div>
+          <div class="val-item">
+            <span class="val-icon">🤝</span>
+            <div class="val-name">Parteneriat pe termen lung</div>
+            <div class="val-desc">Suntem alături de client după livrare.</div>
+          </div>
+          <div class="val-item">
+            <span class="val-icon">📐</span>
+            <div class="val-name">Soluții scalabile</div>
+            <div class="val-desc">De la pilot la producție de serie.</div>
+          </div>
+          <div class="val-item">
+            <span class="val-icon">🛡️</span>
+            <div class="val-name">Conformitate</div>
+            <div class="val-desc">ISO, CE, standarde medicale.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="lbl">Despre Noi</div>
+      <h2 class="sec-title">Partener Tehnic pentru <span class="a">Automatizare Reală</span></h2>
+      <p class="sec-desc" style="margin-bottom:1.5rem">Velkor Automation este o companie de inginerie specializată în integrarea sistemelor robotice industriale și medicale. Lucrăm direct cu echipele tehnice ale clienților, de la analiza procesului până la punerea în funcțiune și mentenanța sistemului.</p>
+      <p class="sec-desc" style="margin-bottom:1.8rem">Abordarea noastră: mai puțin pitch de vânzări, mai mult engineering. Fiecare implementare începe cu un audit tehnic al procesului client și o propunere concretă de ROI.</p>
+      <ul class="feature-list">
+        <li>Audit tehnic gratuit al procesului de producție sau medical</li>
+        <li>Integrare sisteme robotice în infrastructuri existente (fără opriri de producție prelungite)</li>
+        <li>Parteneriate tehnice cu ABB, KUKA, Universal Robots, Omron</li>
+        <li>Certificări ISO 9001, conformitate CE pentru toate echipamentele</li>
+        <li>Echipă de ingineri locali cu disponibilitate rapidă pentru intervenții</li>
+        <li>Formare și transfer de know-how pentru echipa clientului</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICII -->
+<section id="services">
+  <div class="services-header reveal">
+    <div class="lbl">Catalog Soluții</div>
+    <h2 class="sec-title">Serviciile <span class="a">Noastre</span></h2>
+    <p class="sec-desc">Soluții robotice și de automatizare adaptate la specificul fiecărui client. Fiecare proiect începe cu o analiză tehnică detaliată.</p>
+  </div>
+  <div class="stabs">
+    <button class="tab-btn act" onclick="switchTab('ind',this)">Roboți Industriali</button>
+    <button class="tab-btn" onclick="switchTab('med',this)">Roboți Medicali</button>
+    <button class="tab-btn" onclick="switchTab('aut',this)">Automatizare</button>
+  </div>
+
+  <div class="sgrid act" id="tab-ind">
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="ctit">Roboți Colaborativi (Cobots)</div>
+      <p class="cdesc">Roboți proiectați să lucreze în siguranță alături de operatori, fără garduri de protecție. Ideali pentru asamblare, inspecție vizuală și manipulare precisă.</p>
+      <div class="ctags"><span class="tag">UR Series</span><span class="tag">KUKA LBR</span><span class="tag">Asamblare</span><span class="tag">Inspecție</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="ctit">Roboți pentru Sudură</div>
+      <p class="cdesc">Sisteme robotice pentru sudură MIG/TIG/laser cu precizie ridicată. Reducere semnificativă a rebuturilor și creșterea consecvenței calitative.</p>
+      <div class="ctags"><span class="tag">MIG/TIG</span><span class="tag">Laser</span><span class="tag">Automotive</span><span class="tag">Metal</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+      <div class="ctit">Roboți de Paletizare</div>
+      <p class="cdesc">Automatizarea proceselor de paletizare la sfârșitul liniei. Adaptabili la tipuri variate de produse și configurații de paleți, cu viteză programabilă.</p>
+      <div class="ctags"><span class="tag">End-of-line</span><span class="tag">Multi-SKU</span><span class="tag">Logistică</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg></div>
+      <div class="ctit">Roboți de Manipulare</div>
+      <p class="cdesc">Brațe robotice multi-ax pentru manipulare precisă a componentelor fragile sau grele. Soluții pick-and-place, sortare și ambalare.</p>
+      <div class="ctags"><span class="tag">6-DOF</span><span class="tag">Pick&Place</span><span class="tag">Sortare</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+      <div class="ctit">AGV / AMR – Transport Autonom</div>
+      <p class="cdesc">Vehicule autonome pentru transport intern de materiale. Navigație SLAM, evitare obstacole în timp real, integrare cu WMS și ERP.</p>
+      <div class="ctags"><span class="tag">SLAM</span><span class="tag">WMS</span><span class="tag">Fleet Mgmt</span></div>
+    </div>
+  </div>
+
+  <div class="sgrid" id="tab-med">
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="ctit">Roboți de Dezinfectare UV-C</div>
+      <p class="cdesc">Sisteme autonome de dezinfectare cu UV-C și H2O2 pentru spații medicale critice. Reduce sarcina de muncă a personalului în zone cu risc ridicat de infecție.</p>
+      <div class="ctags"><span class="tag">UV-C</span><span class="tag">H2O2</span><span class="tag">Autonom</span><span class="tag">ISO 14644</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div class="ctit">Roboți pentru Reabilitare</div>
+      <p class="cdesc">Exoschelete și sisteme asistate robotic pentru reabilitare locomotorie. Programe individualizate bazate pe date senzoriale în timp real.</p>
+      <div class="ctags"><span class="tag">Exoschelet</span><span class="tag">AVC</span><span class="tag">Neuro-rehab</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="ctit">Soluții Spitale Inteligente</div>
+      <p class="cdesc">Ecosistem integrat pentru spitale: roboți de transport intern, distribuție medicamente, monitorizare IoT și asistenți de triaj. Reduce presiunea pe personalul medical.</p>
+      <div class="ctags"><span class="tag">Smart Hospital</span><span class="tag">IoT</span><span class="tag">Farmacie</span><span class="tag">Lab</span></div>
+    </div>
+  </div>
+
+  <div class="sgrid" id="tab-aut">
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+      <div class="ctit">Integrare AI Industrial</div>
+      <p class="cdesc">Algoritmi ML pentru mentenanță predictivă, control calitate prin computer vision și optimizare dinamică a producției. Reduce timpul de nefuncționare neplanificat.</p>
+      <div class="ctags"><span class="tag">ML</span><span class="tag">Predictiv</span><span class="tag">Computer Vision</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="ctit">Linii de Producție Automatizate</div>
+      <p class="cdesc">Proiectare și implementare linii complet automatizate, cu integrare SCADA, MES și ERP. Abordare modulară — de la automatizare parțială la linie integrală.</p>
+      <div class="ctags"><span class="tag">SCADA</span><span class="tag">MES</span><span class="tag">ERP</span><span class="tag">PLC</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+      <div class="ctit">IoT Industrial & Conectivitate</div>
+      <p class="cdesc">Rețele de senzori industriali, protocoale OPC-UA și MQTT, conectivitate cloud pentru monitorizare și control în timp real al echipamentelor.</p>
+      <div class="ctags"><span class="tag">OPC-UA</span><span class="tag">MQTT</span><span class="tag">Cloud</span><span class="tag">Edge AI</span></div>
+    </div>
+    <div class="scard">
+      <div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+      <div class="ctit">Digital Twin & Simulare</div>
+      <p class="cdesc">Crearea de replici digitale ale proceselor industriale pentru simulare, optimizare și training operatori — înainte de modificarea fizică a liniei.</p>
+      <div class="ctags"><span class="tag">Digital Twin</span><span class="tag">Simulare</span><span class="tag">3D Process</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICII -->
+<section id="benefits">
+  <div class="ben-inner">
+    <div class="reveal">
+      <div class="lbl">Avantaje</div>
+      <h2 class="sec-title">De ce <span class="a">Automatizați</span>?</h2>
+      <p class="sec-desc">Automatizarea nu este o cheltuială — este cea mai predictibilă investiție pe care o poate face o companie modernă. Cifrele de mai jos reflectă medii din industrie, validate de studii independente.</p>
+      <div style="margin-top:2rem">
+        <a href="#contact" class="btn-p" style="display:inline-flex">Calculează ROI-ul tău →</a>
+      </div>
+    </div>
+    <div class="blist reveal">
+      <div class="bitem"><span class="bicon">📉</span><div class="bnum">~30-40%</div><div class="btit">Reducere Costuri Operaționale</div><div class="bdesc">Reducere medie a costurilor de manoperă și rebuturi, conform studii de industrie (McKinsey, Deloitte).</div></div>
+      <div class="bitem"><span class="bicon">⚡</span><div class="bnum">2–3x</div><div class="btit">Creștere Productivitate</div><div class="bdesc">Roboții industriali lucrează cu viteză și precizie constantă, indiferent de schimb sau condiții.</div></div>
+      <div class="bitem"><span class="bicon">🎯</span><div class="bnum">±0.02mm</div><div class="btit">Precizie de Proces</div><div class="bdesc">Precizie repetabilă eliminând variabilitatea umană — critică în componente de precizie.</div></div>
+      <div class="bitem"><span class="bicon">🕐</span><div class="bnum">24/7</div><div class="btit">Operare Continuă</div><div class="bdesc">Fără pauze, weekend-uri sau concedii medicale. Producție non-stop, planificabilă.</div></div>
+      <div class="bitem"><span class="bicon">🛡️</span><div class="bnum">↓ risc</div><div class="btit">Siguranță Industrială</div><div class="bdesc">Roboții preiau sarcinile periculoase (temperaturi, substanțe, greutăți), reducând accidentele.</div></div>
+      <div class="bitem"><span class="bicon">📊</span><div class="bnum">18–36 luni</div><div class="btit">Recuperare Investiție</div><div class="bdesc">Interval tipic de ROI în funcție de complexitatea procesului și volumul de producție.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES DE LUCRU -->
+<section id="process">
+  <div class="proc-inner">
+    <div class="proc-header reveal">
+      <div class="lbl">Metodologie</div>
+      <h2 class="sec-title">Cum <span class="a">Lucrăm</span></h2>
+      <p class="sec-desc" style="margin:0 auto">Un proces structurat, transparent, fără surprize — de la prima discuție până la sistemul funcțional.</p>
+    </div>
+    <div class="proc-grid reveal">
+      <div class="pstep">
+        <div class="pnum">01</div>
+        <div class="ptit">Audit Tehnic</div>
+        <div class="pdesc">Analizăm procesul existent, identificăm punctele de automatizare și calculăm ROI estimat. Gratuit și fără obligații.</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">02</div>
+        <div class="ptit">Propunere Tehnică</div>
+        <div class="pdesc">Livrăm o soluție personalizată: echipamente, integrare, costuri detaliate și timeline de implementare.</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">03</div>
+        <div class="ptit">Pilot & Testare</div>
+        <div class="pdesc">Implementăm un pilot controlat pentru validarea soluției în condițiile reale ale clientului, înainte de scalare.</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">04</div>
+        <div class="ptit">Implementare</div>
+        <div class="pdesc">Instalare, integrare cu sistemele existente, configurare și punere în funcțiune. Minim timp nefuncțional.</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">05</div>
+        <div class="ptit">Training & Suport</div>
+        <div class="pdesc">Formare completă pentru echipa clientului. SLA de mentenanță și suport tehnic on-site disponibil.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRII -->
+<section id="industries">
+  <div class="ind-inner">
+    <div class="ind-header reveal">
+      <div class="lbl">Verticale</div>
+      <h2 class="sec-title">Industrii <span class="a">Deservite</span></h2>
+      <p class="sec-desc">Soluțiile noastre se adaptează la specificul fiecărei industrii, cu cunoaștere a proceselor și standardelor sectoriale.</p>
+    </div>
+    <div class="ind-grid reveal">
+      <div class="icard"><span class="iico">🏭</span><div class="iname">Producție Industrială</div><div class="idesc">Automatizarea liniilor de fabricație</div></div>
+      <div class="icard"><span class="iico">🚗</span><div class="iname">Automotive</div><div class="idesc">Sudură, asamblare, vopsire robotizată</div></div>
+      <div class="icard"><span class="iico">📦</span><div class="iname">Logistică</div><div class="idesc">Depozite inteligente, sortare auto</div></div>
+      <div class="icard"><span class="iico">🏥</span><div class="iname">Medicină</div><div class="idesc">Roboți medicali, spitale inteligente</div></div>
+      <div class="icard"><span class="iico">🍎</span><div class="iname">Industrie Alimentară</div><div class="idesc">Ambalare, sortare, control calitate</div></div>
+      <div class="icard"><span class="iico">🏗️</span><div class="iname">Construcții</div><div class="idesc">Prefabricare, inspecție automatizată</div></div>
+      <div class="icard"><span class="iico">💊</span><div class="iname">Farmacie</div><div class="idesc">Producție sterilă, dispensare auto</div></div>
+      <div class="icard"><span class="iico">⚡</span><div class="iname">Energie</div><div class="idesc">Inspecție și mentenanță robotizată</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEHNOLOGII -->
+<section id="technologies">
+  <div class="tech-inner">
+    <div class="reveal">
+      <div class="lbl">Stack Tehnologic</div>
+      <h2 class="sec-title">Tehnologii <span class="a">Core</span></h2>
+      <p class="sec-desc" style="margin-bottom:1.5rem">Integrăm cele mai mature și scalabile tehnologii industriale disponibile, fără dependență de un singur furnizor.</p>
+      <div class="tlist">
+        <div class="titem"><div class="tdot"></div><span class="tname">Inteligență Artificială</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Machine Learning</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Computer Vision</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Digital Twin</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Edge Computing</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">IoT Industrial</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Robotică Colaborativă</span></div>
+        <div class="titem"><div class="tdot"></div><span class="tname">Cloud Integrat</span></div>
+      </div>
+    </div>
+    <div class="reveal"><canvas id="techCanvas" width="400" height="400"></canvas></div>
+  </div>
+</section>
+
+<!-- PORTOFOLIU — SCENARII -->
+<section id="portfolio">
+  <div class="port-header reveal">
+    <div class="lbl">Scenarii de Implementare</div>
+    <h2 class="sec-title">Exemple de <span class="a">Proiecte</span></h2>
+    <p class="sec-desc">Scenarii tehnice concrete de automatizare, bazate pe tipologii reale de proiecte din industrie.</p>
+  </div>
+  <div class="port-disclaimer reveal">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p><strong>Notă de transparență:</strong> Exemplele de mai jos sunt scenarii tehnice ilustrative, bazate pe tipologii reale de proiecte din industrie. Nu reprezintă proiecte finalizate de Velkor Automation. Suntem o companie nouă, în faza de lansare — și suntem mândri de asta.</p>
+  </div>
+  <div class="pgrid">
+    <div class="pitem">
+      <div class="pvis"><canvas id="pC1" width="600" height="190"></canvas></div>
+      <div class="pinfo">
+        <div class="pcat">Automatizare Industrială</div>
+        <div class="ptitle">Scenariu: Linie de Producție Automotive</div>
+        <p class="pdesc">Integrare roboți de sudură și manipulare pentru fabrică de componente auto. Incluzând SCADA, controlul calității prin computer vision și paletizare automată la final de linie.</p>
+        <span class="ptag-scenario">📋 Scenariu tehnic ilustrativ</span>
+      </div>
+    </div>
+    <div class="pitem">
+      <div class="pvis"><canvas id="pC2" width="300" height="190"></canvas></div>
+      <div class="pinfo">
+        <div class="pcat">Robotică Medicală</div>
+        <div class="ptitle">Scenariu: Dezinfectare Spital</div>
+        <p class="pdesc">Robot UV-C autonom pentru dezinfectarea sistematică a sălilor de operații și saloanelor, cu raportare automată a ciclurilor efectuate.</p>
+        <span class="ptag-scenario">📋 Scenariu tehnic ilustrativ</span>
+      </div>
+    </div>
+    <div class="pitem">
+      <div class="pvis"><canvas id="pC3" width="300" height="190"></canvas></div>
+      <div class="pinfo">
+        <div class="pcat">Logistică Inteligentă</div>
+        <div class="ptitle">Scenariu: Depozit Automatizat</div>
+        <p class="pdesc">Flotă AMR pentru transport intern de materiale, cu sistem centralizat de management al flotei și integrare WMS.</p>
+        <span class="ptag-scenario">📋 Scenariu tehnic ilustrativ</span>
+      </div>
+    </div>
+    <div class="pitem">
+      <div class="pvis"><canvas id="pC4" width="300" height="190"></canvas></div>
+      <div class="pinfo">
+        <div class="pcat">Industry 4.0</div>
+        <div class="ptitle">Scenariu: Digital Twin Factory</div>
+        <p class="pdesc">Replică digitală a procesului de producție pentru simulare și optimizare continuă, cu dashboard în timp real.</p>
+        <span class="ptag-scenario">📋 Scenariu tehnic ilustrativ</span>
+      </div>
+    </div>
+    <div class="pitem">
+      <div class="pvis"><canvas id="pC5" width="300" height="190"></canvas></div>
+      <div class="pinfo">
+        <div class="pcat">Control Calitate AI</div>
+        <div class="ptitle">Scenariu: Inspecție Vizuală Automată</div>
+        <p class="pdesc">Sistem computer vision pentru inspecția 100% a pieselor pe linia de fabricație, cu clasificare automată și raportare defecte.</p>
+        <span class="ptag-scenario">📋 Scenariu tehnic ilustrativ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECHIPĂ -->
+<section id="team">
+  <div class="team-inner">
+    <div class="team-header reveal">
+      <div class="lbl">Echipa Noastră</div>
+      <h2 class="sec-title">Oamenii din <span class="a">Spatele</span> Velkor</h2>
+      <p class="sec-desc" style="margin:0 auto">Ingineri și specialiști cu experiență practică în automatizare industrială și sisteme robotice.</p>
+    </div>
+    <div class="team-grid">
+      <div class="tmember reveal">
+        <div class="tavatar">VA</div>
+        <div class="tname">Valerii Suvac</div>
+        <div class="trole">Fondator & Director Tehnic</div>
+        <p class="tbio">Inginer cu expertiză în sisteme de automatizare industrială și integrare robotică. Fondatorul viziunii Velkor Automation pentru Europa de Est.</p>
+        <a href="https://linkedin.com" class="tli" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="tmember reveal">
+        <div class="tavatar">TE</div>
+        <div class="tname">Echipa Tehnică</div>
+        <div class="trole">Ingineri Automatizare & Robotică</div>
+        <p class="tbio">Specialiști în programare PLC, integrare sisteme robotice, configurare SCADA și implementare soluții IoT industriale.</p>
+        <a href="#contact" class="tli">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Contactează echipa
+        </a>
+      </div>
+      <div class="tmember reveal">
+        <div class="tavatar">CC</div>
+        <div class="tname">Consilieri Tehnici</div>
+        <div class="trole">Experți Industrie & Medicină</div>
+        <p class="tbio">Rețea de consultanți cu experiență în industria automotive, farmaceutică și medicală din România, Moldova și Europa.</p>
+        <a href="#contact" class="tli">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Află mai mult
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="con-inner">
+    <div class="con-info reveal">
+      <div class="lbl">Contact</div>
+      <h2 class="sec-title">Să <span class="a">Colaborăm</span></h2>
+      <p class="sec-desc">Indiferent de stadiul în care ești — idee, evaluare sau decizie de implementare — suntem disponibili pentru o discuție tehnică fără obligații.</p>
+      <div class="con-ctas" style="margin-top:1.5rem">
+        <a href="https://wa.me/37376794607" class="btn-wa" target="_blank" style="justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Scrie pe WhatsApp: +373 76 794 607
+        </a>
+        <a href="mailto:contact@velkor-automation.com" class="btn-s" style="justify-content:center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@velkor-automation.com
+        </a>
+      </div>
+      <div style="margin-top:.5rem">
+        <div class="cdetail">
+          <div class="cdico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="dlbl">Sediu</div><div class="dval">Orhei, Moldova — disponibil și remote/on-site</div></div>
+        </div>
+        <div class="cdetail">
+          <div class="cdico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/></svg></div>
+          <div><div class="dlbl">Telefon / WhatsApp</div><div class="dval">+373 76 794 607</div></div>
+        </div>
+        <div class="cdetail">
+          <div class="cdico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="dlbl">Email</div><div class="dval">contact@velkor-automation.com</div></div>
+        </div>
+      </div>
+      <div class="hours-box">
+        <h4>Program de Lucru</h4>
+        <div class="hours-row"><span>Luni — Vineri</span><span>09:00 – 18:00</span></div>
+        <div class="hours-row"><span>Sâmbătă</span><span>10:00 – 14:00</span></div>
+        <div class="hours-row"><span>Duminică</span><span>Închis</span></div>
+      </div>
+    </div>
+
+    <div class="con-form reveal">
+      <div class="fg2">
+        <div class="fgrp"><label class="flbl">Nume Complet</label><input type="text" class="finp" placeholder="Ion Popescu"></div>
+        <div class="fgrp"><label class="flbl">Companie</label><input type="text" class="finp" placeholder="Firma SRL"></div>
+      </div>
+      <div class="fg2">
+        <div class="fgrp"><label class="flbl">Email</label><input type="email" class="finp" placeholder="email@companie.com"></div>
+        <div class="fgrp"><label class="flbl">Telefon / WhatsApp</label><input type="tel" class="finp" placeholder="+373 XX XXX XXX"></div>
+      </div>
+      <div class="fgrp">
+        <label class="flbl">Domeniu de Interes</label>
+        <select class="finp">
+          <option value="">Selectează...</option>
+          <option>Roboți industriali</option>
+          <option>Automatizare linie producție</option>
+          <option>AGV / Transport autonom</option>
+          <option>Roboți medicali</option>
+          <option>IoT Industrial / SCADA</option>
+          <option>Digital Twin</option>
+          <option>Consultanță / Audit tehnic</option>
+          <option>Altele</option>
+        </select>
+      </div>
+      <div class="fgrp">
+        <label class="flbl">Descrie procesul sau problema</label>
+        <textarea class="ftxt" placeholder="Ex: Avem o linie de ambalare manuală cu 8 operatori și vrem să evaluăm automatizarea. Producție: ~500 unități/zi. Vrem să înțelegem dacă automatizarea e viabilă economic pentru noi..."></textarea>
+      </div>
+      <button class="btn-p" id="submitBtn" style="width:100%;justify-content:center;cursor:pointer" onclick="sendForm()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Solicită Audit Tehnic Gratuit
+      </button>
+      <p style="font-size:.7rem;color:var(--text3);text-align:center;margin-top:1rem">Răspundem în maximum 24 ore. Auditul tehnic inițial este gratuit și fără obligații.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div>
+      <span style="font-family:var(--font-title);font-size:1rem;font-weight:700;letter-spacing:.15em;color:var(--text);display:block;margin-bottom:.3rem">VELKOR <span style="color:var(--cyan)">AUTOMATION</span></span>
+      <p class="ftag">Partener tehnic pentru automatizare industrială și robotică medicală în Europa de Est. Soluții scalabile, suport local, implementare reală.</p>
+      <div class="cert-badges">
+        <span class="cbadge">ISO 9001</span>
+        <span class="cbadge">CE Conform</span>
+        <span class="cbadge">Industry 4.0</span>
+        <span class="cbadge">Moldova · EU</span>
+      </div>
+      <div class="socials" style="margin-top:1.2rem">
+        <a class="soc" href="#" title="LinkedIn">in</a>
+        <a class="soc" href="https://wa.me/37376794607" title="WhatsApp" target="_blank">W</a>
+        <a class="soc" href="#" title="YouTube">▶</a>
+        <a class="soc" href="mailto:contact@velkor-automation.com" title="Email">@</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Servicii</h4>
+      <ul class="flinks">
+        <li><a href="#services">Roboți Industriali</a></li>
+        <li><a href="#services">Roboți Medicali</a></li>
+        <li><a href="#services">Automatizare I4.0</a></li>
+        <li><a href="#services">IoT Industrial</a></li>
+        <li><a href="#services">Digital Twin</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Companie</h4>
+      <ul class="flinks">
+        <li><a href="#about">Despre Noi</a></li>
+        <li><a href="#team">Echipă</a></li>
+        <li><a href="#process">Cum Lucrăm</a></li>
+        <li><a href="#portfolio">Proiecte</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Industrii</h4>
+      <ul class="flinks">
+        <li><a href="#industries">Automotive</a></li>
+        <li><a href="#industries">Medicină</a></li>
+        <li><a href="#industries">Logistică</a></li>
+        <li><a href="#industries">Alimentar</a></li>
+        <li><a href="#industries">Farmacie</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span class="fcopy">© 2025 Velkor Automation SRL · Orhei, Moldova</span>
+    <span class="fcopy">contact@velkor-automation.com · +373 76 794 607</span>
+  </div>
+</footer>
+
+<script>
+// ── LOADER ───────────────────────────────────
+window.addEventListener('load',()=>{
+  const p=document.getElementById('ldProg'),t=document.getElementById('ldTxt');
+  const msgs=['Inițializare sisteme...','Încărcare motor robotică...','Calibrare senzori...','Sistem activ.'];
+  let w=0;
+  const iv=setInterval(()=>{
+    w+=Math.random()*18+6; if(w>100)w=100;
+    p.style.width=w+'%';
+    t.textContent=msgs[Math.floor(w/25)]||msgs[3];
+    if(w>=100){clearInterval(iv);setTimeout(()=>document.getElementById('loader').classList.add('out'),350)}
+  },100);
+});
+
+// ── CURSOR ───────────────────────────────────
+const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+setInterval(()=>{rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.left=rx+'px';ring.style.top=ry+'px'},16);
+document.querySelectorAll('a,button,.scard,.bitem,.icard,.titem,.pitem,.tmember').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');ring.classList.add('big')});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');ring.classList.remove('big')});
+});
+
+// ── NAV ──────────────────────────────────────
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+function toggleNav(){
+  const l=document.getElementById('navLinks');
+  const open=l.style.display==='flex';
+  Object.assign(l.style,open?{display:'none'}:{display:'flex',flexDirection:'column',position:'absolute',top:'70px',left:0,right:0,background:'rgba(2,8,16,.98)',padding:'2rem',borderBottom:'1px solid rgba(0,245,255,.1)',zIndex:99});
+}
+
+// ── REVEAL ───────────────────────────────────
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*70)}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// ── TABS ─────────────────────────────────────
+function switchTab(id,btn){
+  document.querySelectorAll('.sgrid').forEach(g=>g.classList.remove('act'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('act'));
+  document.getElementById('tab-'+id).classList.add('act');
+  btn.classList.add('act');
+}
+
+// ── SMOOTH SCROLL ────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t)t.scrollIntoView({behavior:'smooth'});
+  const l=document.getElementById('navLinks');
+  if(l&&window.innerWidth<1024)l.style.display='none';
+}));
+
+// ── FORM ─────────────────────────────────────
+function sendForm(){
+  const b=document.getElementById('submitBtn');
+  b.innerHTML='✓ Mesaj trimis! Vă contactăm în 24 ore.';
+  b.style.cssText='width:100%;justify-content:center;background:rgba(0,245,255,.12);color:#00f5ff;border:1px solid rgba(0,245,255,.35);font-family:var(--font-title);font-size:.72rem;padding:13px 30px;border-radius:2px;cursor:default';
+}
+
+// ── CANVAS HELPER ────────────────────────────
+function rr(ctx,x,y,w,h,r,fill,stroke){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+  if(fill)ctx.fill();if(stroke)ctx.stroke();
+}
+
+// ── ROBOT CANVAS ─────────────────────────────
+const hc=document.getElementById('heroCanvas'),hx=hc.getContext('2d');
+let ht=0;
+function drawRobot(t){
+  const w=hc.width,h=hc.height,cx=w/2,cy=h/2;
+  hx.clearRect(0,0,w,h);
+  const sw=Math.sin(t*.02)*8,br=Math.sin(t*.015)*4;
+  const g=hx.createRadialGradient(cx,cy,0,cx,cy,200);
+  g.addColorStop(0,'rgba(0,128,255,.1)');g.addColorStop(1,'transparent');
+  hx.fillStyle=g;hx.beginPath();hx.arc(cx,cy,200,0,Math.PI*2);hx.fill();
+  hx.strokeStyle='#00f5ff';hx.lineWidth=1.5;hx.shadowColor='#00f5ff';hx.shadowBlur=8;
+  rr(hx,cx-60,cy-80+br/2,120,140,8,false,true);
+  hx.strokeStyle='rgba(0,245,255,.4)';hx.lineWidth=1;
+  rr(hx,cx-45,cy-60+br/2,90,50,4,false,true);
+  const lg=hx.createRadialGradient(cx,cy-35+br/2,0,cx,cy-35+br/2,20);
+  lg.addColorStop(0,'rgba(0,245,255,.8)');lg.addColorStop(1,'rgba(0,128,255,0)');
+  hx.fillStyle=lg;hx.shadowBlur=20;hx.beginPath();hx.arc(cx,cy-35+br/2,16,0,Math.PI*2);hx.fill();
+  hx.strokeStyle='rgba(0,245,255,.9)';hx.lineWidth=1.5;hx.shadowBlur=15;
+  hx.beginPath();hx.arc(cx,cy-35+br/2,12,0,Math.PI*2);hx.stroke();
+  hx.fillStyle='rgba(0,245,255,1)';hx.shadowBlur=0;
+  hx.beginPath();hx.arc(cx,cy-35+br/2,5,0,Math.PI*2);hx.fill();
+  hx.strokeStyle='#00f5ff';hx.lineWidth=1.5;hx.shadowBlur=10;
+  rr(hx,cx-40,cy-155+br,80,65,10,false,true);
+  hx.fillStyle='rgba(0,128,255,.2)';hx.strokeStyle='rgba(0,245,255,.7)';hx.lineWidth=1;
+  rr(hx,cx-32,cy-148+br,64,25,5,true,true);
+  const ey=cy-136+br;
+  [-15,15].forEach(ex=>{
+    const eg=hx.createRadialGradient(cx+ex,ey,0,cx+ex,ey,7);
+    eg.addColorStop(0,'rgba(0,255,255,.9)');eg.addColorStop(1,'rgba(0,128,255,.2)');
+    hx.fillStyle=eg;hx.shadowBlur=12;hx.shadowColor='#00ffff';
+    hx.beginPath();hx.arc(cx+ex,ey,7,0,Math.PI*2);hx.fill();
+  });
+  hx.strokeStyle='rgba(0,245,255,.5)';hx.lineWidth=1;hx.shadowBlur=5;
+  hx.strokeRect(cx-15,cy-90+br,30,12);
+  hx.strokeStyle='#00f5ff';hx.lineWidth=1.5;hx.shadowBlur=8;
+  rr(hx,cx-90,cy-70+br/2,30,35,4,false,true);rr(hx,cx+60,cy-70+br/2,30,35,4,false,true);
+  const la=cy-35+br/2+sw,ra=cy-35+br/2-sw;
+  hx.strokeStyle='rgba(0,245,255,.7)';hx.lineWidth=1.5;
+  rr(hx,cx-95,la,20,60,4,false,true);rr(hx,cx+75,ra,20,60,4,false,true);
+  rr(hx,cx-98,la+58,26,20,4,false,true);rr(hx,cx+72,ra+58,26,20,4,false,true);
+  hx.strokeStyle='rgba(0,245,255,.6)';hx.lineWidth=1;
+  rr(hx,cx-55,cy+60,110,20,3,false,true);
+  hx.strokeStyle='rgba(0,245,255,.7)';hx.lineWidth=1.5;
+  rr(hx,cx-50,cy+80,35,80,4,false,true);rr(hx,cx+15,cy+80,35,80,4,false,true);
+  rr(hx,cx-55,cy+158,45,16,3,false,true);rr(hx,cx+10,cy+158,45,16,3,false,true);
+  hx.strokeStyle='rgba(0,245,255,.2)';hx.lineWidth=.5;hx.shadowBlur=0;
+  for(let i=0;i<3;i++){
+    const lx=cx-35+i*30;
+    hx.beginPath();hx.moveTo(lx,cy-55+br/2);hx.lineTo(lx,cy-20+br/2);hx.stroke();
+    hx.beginPath();hx.arc(lx,cy-20+br/2,2,0,Math.PI*2);hx.fillStyle='rgba(0,245,255,.35)';hx.fill();
+  }
+  hx.shadowColor='#00f5ff';hx.shadowBlur=5;
+  for(let i=0;i<8;i++){
+    const a=t*.01+i*Math.PI/4,r=165+Math.sin(t*.02+i)*14;
+    hx.fillStyle=`rgba(0,245,255,${.15+Math.sin(t*.03+i)*.12})`;
+    hx.beginPath();hx.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r*.6,2,0,Math.PI*2);hx.fill();
+  }
+  hx.shadowBlur=0;
+}
+
+// ── TECH CANVAS ──────────────────────────────
+const tc=document.getElementById('techCanvas'),tx=tc.getContext('2d');
+let tt=0;
+const nd=[{x:.5,y:.1,l:'AI'},{x:.2,y:.3,l:'ML'},{x:.8,y:.3,l:'CV'},{x:.5,y:.5,l:'Control'},{x:.15,y:.6,l:'IoT'},{x:.85,y:.6,l:'Edge'},{x:.3,y:.8,l:'Robot'},{x:.7,y:.8,l:'Cloud'},{x:.5,y:.92,l:'I4.0'}];
+const ep=[[0,1],[0,2],[1,3],[2,3],[3,4],[3,5],[4,6],[5,7],[6,8],[7,8],[1,6],[2,7]];
+function drawTech(t){
+  const w=tc.width,h=tc.height;tx.clearRect(0,0,w,h);
+  ep.forEach(([a,b],i)=>{
+    const n1=nd[a],n2=nd[b],x1=n1.x*w,y1=n1.y*h,x2=n2.x*w,y2=n2.y*h;
+    tx.strokeStyle='rgba(0,128,255,.15)';tx.lineWidth=1;
+    tx.beginPath();tx.moveTo(x1,y1);tx.lineTo(x2,y2);tx.stroke();
+    const ph=((t*.01+i*.3)%1),px=x1+(x2-x1)*ph,py=y1+(y2-y1)*ph;
+    tx.fillStyle=`rgba(0,245,255,${.8-ph*.5})`;tx.shadowColor='#00f5ff';tx.shadowBlur=8;
+    tx.beginPath();tx.arc(px,py,3,0,Math.PI*2);tx.fill();tx.shadowBlur=0;
+  });
+  nd.forEach((n,i)=>{
+    const x=n.x*w,y=n.y*h,r=i===0?20:13,b=.7+Math.sin(t*.02+i*.8)*.3;
+    const g=tx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,`rgba(0,245,255,${b*.6})`);g.addColorStop(1,'rgba(0,64,128,.1)');
+    tx.fillStyle=g;tx.shadowColor='#00f5ff';tx.shadowBlur=i===0?20:10;
+    tx.beginPath();tx.arc(x,y,r,0,Math.PI*2);tx.fill();
+    tx.strokeStyle=`rgba(0,245,255,${b})`;tx.lineWidth=1.5;tx.shadowBlur=0;
+    tx.beginPath();tx.arc(x,y,r,0,Math.PI*2);tx.stroke();
+    tx.fillStyle=`rgba(0,245,255,${b*.9})`;
+    tx.font=`bold ${i===0?11:9}px 'JetBrains Mono'`;
+    tx.textAlign='center';tx.textBaseline='middle';tx.fillText(n.l,x,y);
+  });
+}
+
+// ── PORTFOLIO CANVAS ─────────────────────────
+function drawPort(id,type){
+  const c=document.getElementById(id);if(!c)return;
+  const x=c.getContext('2d'),w=c.width,h=c.height;x.clearRect(0,0,w,h);
+  x.fillStyle='#091525';x.fillRect(0,0,w,h);
+  if(type==='factory'){
+    const grd=x.createLinearGradient(0,0,w,0);
+    grd.addColorStop(0,'rgba(0,64,128,.3)');grd.addColorStop(.5,'rgba(0,245,255,.04)');grd.addColorStop(1,'rgba(0,64,128,.3)');
+    x.fillStyle=grd;x.fillRect(0,0,w,h);
+    for(let i=0;i<6;i++){
+      const bx=40+i*95,bh2=50+[40,80,60,70,55,65][i],by=h-bh2-20;
+      x.fillStyle='rgba(0,128,255,.15)';x.strokeStyle='rgba(0,245,255,.4)';x.lineWidth=1;
+      x.fillRect(bx,by,60,bh2);x.strokeRect(bx,by,60,bh2);
+      for(let j=0;j<3;j++){x.fillStyle='rgba(0,245,255,.3)';x.fillRect(bx+8+j*18,by+10,12,8)}
+    }
+    x.fillStyle='rgba(0,245,255,.6)';x.font='bold 11px Orbitron,monospace';x.textAlign='center';
+    x.fillText('SCENARIU: LINIE PRODUCȚIE AUTOMOTIVE',w/2,20);
+  } else if(type==='hospital'){
+    for(let i=0;i<5;i++){x.strokeStyle=`rgba(0,245,255,${.06+i*.02})`;x.lineWidth=1;x.beginPath();x.arc(w/2,h/2,28+i*24,0,Math.PI*2);x.stroke()}
+    x.fillStyle='rgba(0,255,200,.65)';x.font='bold 10px JetBrains Mono,monospace';x.textAlign='center';
+    x.fillText('UV-C DEZINFECTARE',w/2,h/2);x.fillText('SCENARIU MEDICAL',w/2,h/2+16);
+  } else if(type==='warehouse'){
+    for(let i=0;i<8;i++)for(let j=0;j<3;j++){
+      x.fillStyle='rgba(0,64,128,.3)';x.strokeStyle='rgba(0,245,255,.3)';x.lineWidth=1;
+      x.fillRect(18+i*35,18+j*50,26,40);x.strokeRect(18+i*35,18+j*50,26,40);
+    }
+    x.fillStyle='rgba(0,245,255,.9)';x.beginPath();x.arc(120,170,8,0,Math.PI*2);x.fill();
+    x.fillStyle='rgba(0,245,255,.6)';x.font='10px JetBrains Mono,monospace';x.textAlign='center';
+    x.fillText('SCENARIU: FLOTĂ AMR DEPOZIT',w/2,185);
+  } else if(type==='twin'){
+    x.strokeStyle='rgba(0,128,255,.5)';x.lineWidth=1;x.setLineDash([4,4]);
+    x.strokeRect(18,18,w/2-28,h-38);x.strokeRect(w/2+10,18,w/2-28,h-38);x.setLineDash([]);
+    x.fillStyle='rgba(0,245,255,.5)';x.font='9px JetBrains Mono,monospace';x.textAlign='center';
+    x.fillText('FIZIC',w/4,h/2);x.fillText('DIGITAL TWIN',w*3/4,h/2);
+    x.strokeStyle='rgba(0,245,255,.25)';x.lineWidth=1;
+    for(let i=0;i<5;i++){x.beginPath();x.moveTo(w/2-18,38+i*24);x.lineTo(w/2+18,38+i*24);x.stroke()}
+  } else if(type==='vision'){
+    const cx=w/2,cy=h/2;
+    x.strokeStyle='rgba(0,245,255,.65)';x.lineWidth=1.5;x.strokeRect(cx-40,cy-32,80,65);
+    [[-30,-22],[10,-22],[-30,10],[10,10]].forEach(([dx,dy])=>{
+      x.strokeStyle='rgba(0,255,128,.8)';x.strokeRect(cx+dx,cy+dy,20,13);
+    });
+    x.fillStyle='rgba(0,245,255,.65)';x.font='10px JetBrains Mono,monospace';x.textAlign='center';
+    x.fillText('SCENARIU: INSPECȚIE AI',cx,18);
+  }
+}
+
+// ── ANIMATION LOOP ────────────────────────────
+function loop(){ht++;tt++;drawRobot(ht);drawTech(tt);requestAnimationFrame(loop)}
+loop();
+drawPort('pC1','factory');drawPort('pC2','hospital');drawPort('pC3','warehouse');drawPort('pC4','twin');drawPort('pC5','vision');
+</script>
+</body>
+</html>
