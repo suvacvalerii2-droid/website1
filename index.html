@@ -349,13 +349,208 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">
-  <svg class= viewBox="0 0 34 34" fill="none" xmlns=img src="images/velkor-logo.png">
-      <polygon points="17,2 32,9.5 32,24.5 17,32 2,24.5 2,9.5" fill="none" stroke="rgba(0,245,255,0.3)" stroke-width="1"/>
-      <polygon points="17,6 28,12 28,22 17,28 6,22 6,12" fill="none" stroke="rgba(0,245,255,0.5)" stroke-width="1"/>
-      <polygon points="17,10 24,14 24,22 17,26 10,22 10,14" fill="rgba(0,245,255,0.08)" stroke="#00f5ff" stroke-width="1"/>
-      <circle cx="17" cy="18" r="3.5" fill="#00f5ff" opacity="0.9"/>
-    </svg>
+  <div class="logo">
+        <img src="images/velkor-logo.png"
+             alt="VELKOR Automation Logo">
+                 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELKOR Automation</title>
+
+    <style>
+
+        /* RESET */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f4f5f7;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar{
+            width:100%;
+            background:white;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:18px 60px;
+
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* LOGO */
+
+        .logo img{
+            width:180px;
+            height:auto;
+            display:block;
+        }
+
+        /* MENU */
+
+        .menu{
+            display:flex;
+            gap:35px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:#0f1724;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            color:#ff6a00;
+        }
+
+        /* =========================
+           HERO / LANDING
+        ========================== */
+
+        .hero{
+            height:85vh;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+
+            padding:40px;
+        }
+
+        .hero-logo{
+            width:320px;
+            margin-bottom:30px;
+        }
+
+        .hero h1{
+            font-size:58px;
+            color:#0f1724;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:20px;
+            color:#5f6672;
+            max-width:700px;
+            line-height:1.6;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media(max-width:992px){
+
+            .navbar{
+                padding:18px 30px;
+            }
+
+            .logo img{
+                width:150px;
+            }
+
+            .menu{
+                gap:20px;
+            }
+
+            .hero-logo{
+                width:240px;
+            }
+
+            .hero h1{
+                font-size:42px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media(max-width:768px){
+
+            .navbar{
+                flex-direction:column;
+                gap:20px;
+
+                padding:20px;
+            }
+
+            .logo img{
+                width:130px;
+            }
+
+            .menu{
+                flex-wrap:wrap;
+                justify-content:center;
+                gap:15px;
+            }
+
+            .menu a{
+                font-size:14px;
+            }
+
+            .hero{
+                padding:20px;
+                height:auto;
+                min-height:80vh;
+            }
+
+            .hero-logo{
+                width:180px;
+            }
+
+            .hero h1{
+                font-size:32px;
+            }
+
+            .hero p{
+                font-size:16px;
+                line-height:1.5;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="images/velkor-logo.png"
+                 alt="VELKOR Automation Logo">
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <img src="images/velkor-logo.png"
+             class="hero-logo"
+             alt="VELKOR Automation">
     <span class="logo-txt">VELKOR <span>AUTOMATION</span></span>
   </a>
   <ul class="nav-links" id="navLinks">
