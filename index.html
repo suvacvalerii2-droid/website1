@@ -597,22 +597,50 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
         <a href="#contact" class="btn-p" style="display:inline-flex">Calculează ROI-ul tău →</a>
       </div>
     </div>
-    <div class="blist reveal">
-      <div class="bitem"><span class="bicon">📉</span><div class="bnum">~30-40%</div><div class="btit">Reducere Costuri Operaționale</div><div class="bdesc">Reducere medie a costurilor de manoperă și rebuturi, conform studii de industrie (McKinsey, Deloitte).</div></div>
-      <div class="bitem"><span class="bicon">⚡</span><div class="bnum">2–3x</div><div class="btit">Creștere Productivitate</div><div class="bdesc">Roboții industriali lucrează cu viteză și precizie constantă, indiferent de schimb sau condiții.</div></div>
-      <div class="bitem"><span class="bicon">🎯</span><div class="bnum">±0.02mm</div><div class="btit">Precizie de Proces</div><div class="bdesc">Precizie repetabilă eliminând variabilitatea umană — critică în componente de precizie.</div></div>
-      <div class="bitem"><span class="bicon">🕐</span><div class="bnum">24/7</div><div class="btit">Operare Continuă</div><div class="bdesc">Fără pauze, weekend-uri sau concedii medicale. Producție non-stop, planificabilă.</div></div>
-      <div class="bitem"><span class="bicon">🛡️</span><div class="bnum">↓ risc</div><div class="btit">Siguranță Industrială</div><div class="bdesc">Roboții preiau sarcinile periculoase (temperaturi, substanțe, greutăți), reducând accidentele.</div></div>
-      <div class="bitem"><span class="bicon">📊</span><div class="bnum">18–36 luni</div><div class="btit">Recuperare Investiție</div><div class="bdesc">Interval tipic de ROI în funcție de complexitatea procesului și volumul de producție.</div></div>
-    </div>
-    </div> <div class="blist reveal">
-      <div class="bitem"><span class="bicon">🎯</span><div class="bnum">Sub 1mm</div><div class="btit">Precizie Chirurgicală</div><div class="bdesc">Acuratețe microscopică în incizii și suturi, depășind limitele tremurului nativ al mâinii umane.</div></div>
-      <div class="bitem"><span class="bicon">🩹</span><div class="bnum">-50%</div><div class="btit">Ininvazivitate & Recuperare</div><div class="bdesc">Incizii mai mici care reduc trauma tisulară, durerea postoperatorie și timpul de spitalizare al pacientului.</div></div>
-      <div class="bitem"><span class="bicon">🩸</span><div class="bnum">Minim</div><div class="btit">Sângerare Redusă</div><div class="bdesc">Control superioară al mișcărilor în timpul intervenției, scăzând drastic riscul de hemoragii și necesitatea transfuziilor.</div></div>
-      <div class="bitem"><span class="bicon">🦾</span><div class="bnum">360°</div><div class="btit">Articulații EndoWrist</div><div class="bdesc">Instrumente cu grade de libertate superioare încheieturii umane, ideale în spații anatomice extrem de înguste.</div></div>
-      <div class="bitem"><span class="bicon">🩺</span><div class="bnum">100%</div><div class="btit">Siguranță și Sterilitate</div><div class="bdesc">Roboții de dezinfectare UV-C și sistemele automatizate reduc la minimum riscul infecțiilor nosocomiale.</div></div>
-      <div class="bitem"><span class="bicon">👨‍⚕️</span><div class="bnum">0 oboseală</div><div class="btit">Asistență Ergonimică</div><div class="bdesc">Permite chirurgilor să opereze așezați la consolă, reducând oboseala fizică în timpul intervențiilor de lungă durată.</div></div>
-    </div>
+<style>
+  /* CSS-ul necesar pentru a alinia totul pe 4 coloane */
+  .four-columns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+  .bcol {
+    flex: 1;
+    min-width: 220px; /* Se asigură că pe ecrane mici/mobil codul rămâne lizibil și trece unul sub altul */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+</style>
+
+<div class="four-columns-wrapper reveal">
+  
+  <div class="bcol">
+    <div class="bitem"><span class="bicon">📉</span><div class="bnum">~30-40%</div><div class="btit">Reducere Costuri Operaționale</div><div class="bdesc">Reducere medie a costurilor de manoperă și rebuturi, conform studii de industrie (McKinsey, Deloitte).</div></div>
+    <div class="bitem"><span class="bicon">⚡</span><div class="bnum">2–3x</div><div class="btit">Creștere Productivitate</div><div class="bdesc">Roboții industriali lucrează cu viteză și precizie constantă, indiferent de schimb sau condiții.</div></div>
+    <div class="bitem"><span class="bicon">🎯</span><div class="bnum">±0.02mm</div><div class="btit">Precizie de Proces</div><div class="bdesc">Precizie repetabilă eliminând variabilitatea umană — critică în componente de precizie.</div></div>
+  </div>
+  
+  <div class="bcol">
+    <div class="bitem"><span class="bicon">🕐</span><div class="bnum">24/7</div><div class="btit">Operare Continuă</div><div class="bdesc">Fără pauze, weekend-uri sau concedii medicale. Producție non-stop, planificabilă.</div></div>
+    <div class="bitem"><span class="bicon">🛡️</span><div class="bnum">↓ risc</div><div class="btit">Siguranță Industrială</div><div class="bdesc">Roboții preiau sarcinile periculoase (temperaturi, substanțe, greutăți), reducând accidentele.</div></div>
+    <div class="bitem"><span class="bicon">📊</span><div class="bnum">18–36 luni</div><div class="btit">Recuperare Investiție</div><div class="bdesc">Interval tipic de ROI în funcție de complexitatea procesului și volumul de producție.</div></div>
+  </div>
+
+  <div class="bcol">
+    <div class="bitem"><span class="bicon">🎯</span><div class="bnum">Sub 1mm</div><div class="btit">Precizie Chirurgicală</div><div class="bdesc">Acuratețe microscopică în incizii și suturi, depășind limitele tremurului nativ al mâinii umane.</div></div>
+    <div class="bitem"><span class="bicon">🩹</span><div class="bnum">-50%</div><div class="btit">Ininvazivitate & Recuperare</div><div class="bdesc">Incizii mai mici care reduc trauma tisulară, durerea postoperatorie și timpul de spitalizare al pacientului.</div></div>
+    <div class="bitem"><span class="bicon">🩸</span><div class="bnum">Minim</div><div class="btit">Sângerare Redusă</div><div class="bdesc">Control superior al mișcărilor în timpul intervenției, scăzând drastic riscul de hemoragii și necesitatea transfuziilor.</div></div>
+  </div>
+  
+  <div class="bcol">
+    <div class="bitem"><span class="bicon">🦾</span><div class="bnum">360°</div><div class="btit">Articulații EndoWrist</div><div class="bdesc">Instrumente cu grade de libertate superioare încheieturii umane, ideale în spații anatomice extrem de înguste.</div></div>
+    <div class="bitem"><span class="bicon">🩺</span><div class="bnum">100%</div><div class="btit">Siguranță și Sterilitate</div><div class="bdesc">Roboții de dezinfectare UV-C și sistemele automatizate reduc la minimum riscul infecțiilor nosocomiale.</div></div>
+    <div class="bitem"><span class="bicon">👨‍⚕️</span><div class="bnum">0 oboseală</div><div class="btit">Asistență Ergonomică</div><div class="bdesc">Permite chirurgilor să opereze așezați la consolă, reducând oboseala fizică în timpul intervențiilor de lungă durată.</div></div>
+  </div>
+
+</div>
   </div>
 </section>
 
