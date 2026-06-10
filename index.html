@@ -872,15 +872,100 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
       <p class="sec-desc">Soluțiile noastre se adaptează la specificul fiecărei industrii.</p>
     </div>
     <div class="ind-grid reveal">
-      <div class="icard"><span class="iico">🏭</span><div class="iname">Producție Industrială</div><div class="idesc">Automatizarea liniilor de fabricație</div></div>
-      <div class="icard"><span class="iico">🚗</span><div class="iname">Automotive</div><div class="idesc">Sudură, asamblare, vopsire robotizată</div></div>
-      <div class="icard"><span class="iico">📦</span><div class="iname">Logistică</div><div class="idesc">Depozite inteligente, sortare auto</div></div>
-      <div class="icard"><span class="iico">🏥</span><div class="iname">Medicină</div><div class="idesc">Roboți medicali, spitale inteligente</div></div>
-      <div class="icard"><span class="iico">🍎</span><div class="iname">Industrie Alimentară</div><div class="idesc">Ambalare, sortare, control calitate</div></div>
-      <div class="icard"><span class="iico">🏗️</span><div class="iname">Construcții</div><div class="idesc">Prefabricare, inspecție automatizată</div></div>
-      <div class="icard"><span class="iico">💊</span><div class="iname">Farmacie</div><div class="idesc">Producție sterilă, dispensare auto</div></div>
-      <div class="icard"><span class="iico">⚡</span><div class="iname">Energie</div><div class="idesc">Inspecție și mentenanță robotizată</div></div>
-    </div>
+     <!-- CONTAINERUL PRINCIPAL PENTRU INDUSTRII -->
+<div class="industries-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 2rem auto; max-width: 1100px; padding: 0 15px; box-sizing: border-box;">
+  
+  <style>
+    .icard {
+      flex: 1;
+      min-width: 240px; /* Se asigură că pe mobil se pun frumos una sub alta, iar pe desktop stau 3 sau 4 pe rând */
+      max-width: 260px;
+      background: rgba(255, 255, 255, 0.03); /* Fundal extrem de subtil, preia culoarea paginii tale */
+      border: 1px solid rgba(0, 0, 0, 0.08); /* Chenar discret */
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Efect subtil când clientul trece cu mouse-ul peste card */
+    .icard:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .iico {
+      font-size: 2.5rem; /* Dimensiune optimă pentru emoji */
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .iname {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: inherit; /* Preia culoarea textului din site */
+    }
+
+    .idesc {
+      font-size: 0.88rem;
+      opacity: 0.7;
+      line-height: 1.4;
+    }
+  </style>
+
+  <!-- CARDURILE TALE (PĂSTRATE EXACT) -->
+  <div class="icard">
+    <span class="iico">🏭</span>
+    <div class="iname">Producție Industrială</div>
+    <div class="idesc">Automatizarea liniilor de fabricație și eficientizarea fluxurilor interne.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">🚗</span>
+    <div class="iname">Automotive</div>
+    <div class="idesc">Sudură, asamblare componentă și vopsire robotizată de înaltă precizie.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">📦</span>
+    <div class="iname">Logistică</div>
+    <div class="idesc">Depozite inteligente, sortare automată și sisteme mobile autonome.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">🏥</span>
+    <div class="iname">Medicină</div>
+    <div class="idesc">Roboți medicali asistenți, chirurgie minim invazivă și spitale inteligente.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">🍎</span>
+    <div class="iname">Industrie Alimentară</div>
+    <div class="idesc">Ambalare rapidă, sortare igienică și sisteme de control al calității.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">🏗️</span>
+    <div class="iname">Construcții</div>
+    <div class="idesc">Prefabricare digitală, debitare și inspecție automatizată a materialelor.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">💊</span>
+    <div class="iname">Farmacie</div>
+    <div class="idesc">Producție în mediu steril, dozare milimetrică și dispensare automată.</div>
+  </div>
+
+  <div class="icard">
+    <span class="iico">⚡</span>
+    <div class="iname">Energie</div>
+    <div class="idesc">Inspecție tehnică autonomă și mentenanță robotizată în medii de risc.</div>
+  </div>
+
+</div>
   </div>
 </section>
 
