@@ -564,7 +564,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
     <div class="lbl" style="font-size: 0.85rem;">Instrument</div>
     <h3 class="sec-title" style="font-size: 1.5rem; margin: 5px 0;">Calculează <span class="a">ROI-ul</span></h3>
   </div>
-  
+
 <style>
     .disclaimer-container {
         margin-top: 30px;
@@ -823,6 +823,52 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
         <div class="bitem"><span class="bicon">👨‍⚕️</span><div class="bnum">0 oboseală</div><div class="btit">Asistență Ergonomică</div><div class="bdesc">Permite chirurgilor să opereze așezați la consolă, reducând oboseala fizică în timpul intervențiilor de lungă durată.</div></div>
       </div>
     </div>
+    .advantages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .card {
+        background-color: #0b1a21;
+        border: 2px solid #1a3a45;
+        padding: 30px;
+        text-align: center;
+        /* Tranziția acționează pe tot ce transformăm (poziție și mărime) */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        cursor: pointer;
+    }
+
+    /* Efectul de Hover - Ridicare + Mărire + Culoare */
+    .card:hover {
+        /* Adăugăm scale(1.05) pentru a mări cardul cu 5% la hover */
+        transform: translateY(-15px) scale(1.05); 
+        border-color: #00d4ff; 
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Umbră mai mare pentru volum */
+        z-index: 10; /* Asigură că acest card va fi deasupra celorlalte când se mărește */
+    }
+
+    /* Optimizare Lizibilitate */
+    .card h3 { 
+        color: #ffffff; 
+        margin-bottom: 10px; 
+        font-weight: 700;
+    }
+
+    .card h4 { 
+        color: #00d4ff; 
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .card p { 
+        color: #e0e0e0; 
+        font-size: 1rem; 
+        font-weight: 500; 
+        line-height: 1.5;
+    }
+</style>
   </div>
   </div>
 </section>
