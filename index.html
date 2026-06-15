@@ -823,53 +823,55 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:5rem 4r
         <div class="bitem"><span class="bicon">👨‍⚕️</span><div class="bnum">0 oboseală</div><div class="btit">Asistență Ergonomică</div><div class="bdesc">Permite chirurgilor să opereze așezați la consolă, reducând oboseala fizică în timpul intervențiilor de lungă durată.</div></div>
       </div>
     </div>
-    .advantages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        padding: 40px 20px;
-    }
+    <style>
+        /* 1. STILURILE (Le pui în <head>) */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+        }
 
-    .card {
-        background-color: #0b1a21;
-        border: 2px solid #1a3a45;
-        padding: 30px;
-        text-align: center;
-        /* Tranziția acționează pe tot ce transformăm (poziție și mărime) */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        cursor: pointer;
-    }
+        .card {
+            background-color: #0b1a21;
+            border: 2px solid #1a3a45;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
 
-    /* Efectul de Hover - Ridicare + Mărire + Culoare */
-    .card:hover {
-        /* Adăugăm scale(1.05) pentru a mări cardul cu 5% la hover */
-        transform: translateY(-15px) scale(1.05); 
-        border-color: #00d4ff; 
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Umbră mai mare pentru volum */
-        z-index: 10; /* Asigură că acest card va fi deasupra celorlalte când se mărește */
-    }
+        .card:hover {
+            transform: translateY(-15px) scale(1.05); /* Ridicare și Mărire */
+            border-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
 
-    /* Optimizare Lizibilitate */
-    .card h3 { 
-        color: #ffffff; 
-        margin-bottom: 10px; 
-        font-weight: 700;
-    }
+        .card h3 { color: #ffffff; margin-bottom: 10px; font-weight: 700; }
+        .card h4 { color: #00d4ff; margin-bottom: 15px; font-weight: 600; }
+        .card p { color: #e0e0e0; font-size: 1rem; font-weight: 500; line-height: 1.5; }
+    </style>
+</head>
 
-    .card h4 { 
-        color: #00d4ff; 
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-
-    .card p { 
-        color: #e0e0e0; 
-        font-size: 1rem; 
-        font-weight: 500; 
-        line-height: 1.5;
-    }
-</style>
-  </div>
+<body>
+    <div class="advantages-grid">
+        <div class="card">
+            <h3>~20-30%</h3>
+            <h4>Reducere Costuri</h4>
+            <p>Reducere medie a costurilor de manoperă și diminuarea rebuturilor.</p>
+        </div>
+        <div class="card">
+            <h3>24/7</h3>
+            <h4>Operare Continuă</h4>
+            <p>Producție constantă fără pauze, weekend-uri sau concedii.</p>
+        </div>
+        <div class="card">
+            <h3>±0.02mm</h3>
+            <h4>Precizie de Proces</h4>
+            <p>Acuratețe microscopică menținută la fiecare ciclu de producție.</p>
+        </div>
+    </div>
   </div>
 </section>
 
